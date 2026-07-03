@@ -7,17 +7,17 @@ class Book:
         self.is_available = True
         
     def borrow_book(self):
-        pass
-    
+        self.is_available = False
+        
     def return_book(self):
-        pass
+        self.is_available = True
     
     def display_info(self):
-        pass
+        print(f"Title: {self.title}, Author: {self.author}, Available: {self.is_available}")
     
 
 class Library:
-    def __init__(self, books):
+    def __init__(self):
         self.books = []
         
     def add_book(self, book):
