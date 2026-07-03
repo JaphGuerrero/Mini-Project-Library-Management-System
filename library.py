@@ -7,18 +7,29 @@ class Book:
         self.is_available = True
         
     def borrow_book(self):
+        """Attempts to borrow the book.
+
+        Returns True if the book was successfully borrowed,
+        otherwise returns False if it was already unavailable.
+        """
         if self.is_available:
             self.is_available = False
             return True
         return False
 
     def return_book(self):
+        """Returns the book to the library.
+
+        Marks the book as available again if it was previously borrowed.
+        Returns True if successful, otherwise False.
+        """
         if not self.is_available:
             self.is_available = True
             return True
         return False
 
     def display_info(self):
+        """Displays the book's title, author, and availability status."""
         print(f"Title: {self.title}, Author: {self.author}, Available: {self.is_available}")
     
 
@@ -27,14 +38,18 @@ class Library:
         self.books = []
         
     def add_book(self, book):
+        """Adds a Book object to the library collection."""
+        self.books.append(book)
+    
+    def show_books(self):
+        """Displays all books in the library with their details."""
         pass
     
-    def show_book(self):
-        pass
-    
-    def boorrow_book(self, title):
+    def borrow_book(self, title):
+        """Allows the user to borrow a specific book by title."""
         pass
     
     def return_book(self, title):
+        """Allows the user to return a borrowed book by title."""
         pass
         
