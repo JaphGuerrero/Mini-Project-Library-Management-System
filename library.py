@@ -7,11 +7,17 @@ class Book:
         self.is_available = True
         
     def borrow_book(self):
-        self.is_available = False
-        
+        if self.is_available:
+            self.is_available = False
+            return True
+        return False
+
     def return_book(self):
-        self.is_available = True
-    
+        if not self.is_available:
+            self.is_available = True
+            return True
+        return False
+
     def display_info(self):
         print(f"Title: {self.title}, Author: {self.author}, Available: {self.is_available}")
     
