@@ -43,13 +43,28 @@ class Library:
     
     def show_books(self):
         """Displays all books in the library with their details."""
-        pass
+        for book in self.books:
+            print(f"\nTitle: {book.title}, Author: {book.author}, Available: {book.is_available}")
     
     def borrow_book(self, title):
         """Allows the user to borrow a specific book by title."""
-        pass
+        for book in self.books:
+            if book.title == title:
+                if book.borrow_book():
+                    print(f"You have successfully borrowed '{title}'.")
+                    return
+                else:
+                    print(f"Sorry, '{title}' is currently unavailable.")
+                    return
+                
     
     def return_book(self, title):
         """Allows the user to return a borrowed book by title."""
-        pass
-        
+        for book in self.books:
+            if book.title == title:
+                if book.return_book():
+                    print(f"You have successfully returned '{title}'.")
+                    return
+                else:
+                    print(f"'{title}' was not borrowed.")
+                    return
