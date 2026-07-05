@@ -46,6 +46,13 @@ class Library:
         for book in self.books:
             print(f"\nTitle: {book.title}, Author: {book.author}, Available: {book.is_available}")
     
+    def find_book(self, title):
+        """Searches for a book by title and returns it if found."""
+        for book in self.books:
+            if book.title == title:
+                return book
+        return None
+    
     def borrow_book(self, title):
         """Allows the user to borrow a specific book by title."""
         for book in self.books:
@@ -68,3 +75,7 @@ class Library:
                 else:
                     print(f"'{title}' was not borrowed.")
                     return
+
+
+def main():
+    pass  # Placeholder for the main function implementation
